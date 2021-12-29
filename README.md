@@ -1,23 +1,39 @@
-# Hello world JavaScript action
+# CI Notify JavaScript action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action sends an email notification to the specified recipient.
+
+**Motivation**:
+
+- Zero domain/DNS configuration
+- No need to give out SMTP credentials
+- It Just Works™️
 
 ## Inputs
 
-### `who-to-greet`
+### `to`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The recipient of the email
+
+### `subject`
+
+Email subject
+
+### `body`
+
+Email body
 
 ## Outputs
 
-### `time`
+### `status`
 
-The time we greeted you.
+"ok" if the notification sent successfully.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@main
+uses: jshawl/cinotify-action@main
 with:
-  who-to-greet: 'Mona the Octocat'
+  to: 'jesse@jesse.sh'
+  subject: 'building main'
+  body: 'This is a notification from GitHub actions.'
 ```
