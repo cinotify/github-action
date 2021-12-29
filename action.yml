@@ -1,6 +1,7 @@
 name: 'CINotify Email'
-icon: 'mail'
-color: 'yellow'
+branding:
+  icon: 'mail'
+  color: 'yellow'
 description: 'Send an email notification'
 inputs:
   to:  # id of input
