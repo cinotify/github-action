@@ -1,4 +1,5 @@
 name: 'CINotify Email'
+icon: 'mail'
 description: 'Send an email notification'
 inputs:
   to:  # id of input
