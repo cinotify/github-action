@@ -31,9 +31,9 @@ Email body
 ## Example usage
 
 ```yaml
-uses: jshawl/cinotify-action@main
+uses: cinotify/github-action@main
 with:
-  to: 'jesse@jesse.sh'
+  to: 'example@example.com'
   subject: 'building main'
   body: 'This is a notification from GitHub actions.'
 ```
