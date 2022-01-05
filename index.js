@@ -1,12 +1,11 @@
 const core = require('@actions/core');
-const http = require('axios')
+const { email } = require('@cinotify/email')
 
 try {
     const to = core.getInput('to');
     const subject = core.getInput('subject');
     const body = core.getInput('body');
-
-    http.post('https://www.cinotify.cc/api/notify', {
+    email({
         to,
         subject,
         body
