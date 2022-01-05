@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const { email } = require('@cinotify/email')
+const { email } = require('@cinotify/js')
 
 try {
     const to = core.getInput('to');
