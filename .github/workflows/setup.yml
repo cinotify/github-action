@@ -1,5 +1,4 @@
-name: Licensed
-
+name: Install
 on:
   push: {branches: main}
   pull_request: {branches: main}
@@ -7,7 +6,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Check licenses
+    name: setup
     steps:
       - uses: actions/checkout@v2
       - run: npm ci
