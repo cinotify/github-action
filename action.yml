@@ -15,5 +15,5 @@ outputs:
   status: # id of output
     description: 'The delivery status of the notification'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
