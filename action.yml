@@ -11,6 +11,8 @@ inputs:
     description: 'Email subject'
   body:
     description: 'Email body'
+  attachment:
+    description: 'Email attachment'
 outputs:
   status: # id of output
     description: 'The delivery status of the notification'
