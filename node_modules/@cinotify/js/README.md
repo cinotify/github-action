@@ -12,9 +12,18 @@ $ npm install -s @cinotify/js
 
 ```js
 const {email} = require("@cinotify/js");
+const mime = require('mime');
+
 email({
   to: 'example@example.com',
   subject: 'hello',
-  body: 'hey there from js'
+  body: 'hey there from js',
+  attachments: [
+    {
+      content: Buffer.from("Hello, World!").toString('base64'),
+      type: mime.getType("txt"),
+      filename: "example.txt"
+    }
+  ]
 })
 ```
