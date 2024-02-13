@@ -24,7 +24,7 @@ Email body
 
 ### `attachment`
 
-Filename of the attachment
+Filename of the attachment or directory
 
 ## Outputs
 
@@ -40,5 +40,5 @@ with:
   to: 'example@example.com'
   subject: 'building main'
   body: 'This is a notification from GitHub actions.'
-  attachment: 'artifacts.zip'
+  attachment: 'artifacts.zip' # 'somedir/somesubdir'
 ```
