@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const mime = require('mime');
 const { email } = require('@cinotify/js');
 const { readFileSync, lstatSync, readdirSync, statSync } = require('fs');
-const { join, relative } = require('path');
+const { join, relative, basename } = require('path');
 
 try {
     const to = core.getInput('to');
@@ -19,7 +19,7 @@ try {
             files.forEach(filePath => {
                 const fileContent = readFileSync(filePath);
                 const attachment = {
-                    filename: relative(attachmentPath, filePath),
+                    filename: basename(relative(attachmentPath, filePath)),
                     type: mime.getType(filePath),
                     content: fileContent.toString('base64')
                 }
@@ -28,7 +28,7 @@ try {
         } else {
             const file = readFileSync(attachmentPath);
             const attachment = {
-                filename: attachmentPath,
+                filename: basename(attachmentPath),
                 type: mime.getType(attachmentPath),
                 content: file.toString('base64')
             }
