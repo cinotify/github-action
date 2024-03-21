@@ -1,6 +1,6 @@
 {
     "name": "cinotify-email-action",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
     "main": "index.js",
     "scripts": {
