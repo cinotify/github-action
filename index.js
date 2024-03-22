@@ -27,8 +27,14 @@ try {
             'User-Agent': `@cinotify/github-action@${process.env['GITHUB_ACTION_REF']}`
         },
         method: 'POST'
-    }).then(() => {
-        core.setOutput("status", "ok")
+    }).then((response) => {
+        if(response.status > 299) {
+            response.json().then(data => {
+                core.setFailed(data.error);
+            });
+        } else {
+            core.setOutput("status", "ok")
+        }
     }).catch(err => {
         core.setFailed(err.message)
     })
