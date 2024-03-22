@@ -22,6 +22,10 @@ Email subject
 
 Email body
 
+### `type`
+
+Email body MIME type
+
 ### `attachment`
 
 Filename of the attachment
@@ -39,6 +43,7 @@ uses: cinotify/github-action@main
 with:
   to: 'example@example.com'
   subject: 'building main'
-  body: 'This is a notification from GitHub actions.'
+  body: '<em>This is a notification from GitHub actions.</em>'
+  type: 'text/html'
   attachment: 'artifacts.zip'
 ```
