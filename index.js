@@ -20,7 +20,7 @@ try {
         payload.attachments = [attachment];
     }
 
-    fetch('https://www.cinotify.cc/api/notify', {
+    fetch('https://staging.cinotify.cc/api/notify', {
         body: JSON.stringify(payload),
         headers: {
             'Content-Type': 'application/json',
