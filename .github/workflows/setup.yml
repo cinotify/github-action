@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: cinotify/github-action@staging
         with:
-          to: "invalid email"
+          to: "validemail@jesse.sh"
           subject: "staging cinotify github action"
           body: "<em>This is a notification from GitHub actions.</em>"
           type: "text/html"
