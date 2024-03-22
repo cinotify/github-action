@@ -2,8 +2,6 @@ const core = require('@actions/core');
 const mime = require('mime');
 const {readFileSync} = require('fs');
 
-console.log(process.env);
-
 try {
     const to = core.getInput('to');
     const subject = core.getInput('subject');
@@ -23,10 +21,12 @@ try {
     }
 
     fetch('https://www.cinotify.cc/api/notify', {
+        body: JSON.stringify(payload),
         headers: {
             'Content-Type': 'application/json',
+            'User-Agent': `@cinotify/github-action@${process.env['GITHUB_ACTION_REF']}`
         },
-        body: JSON.stringify(payload)
+        method: 'POST'
     }).then(() => {
         core.setOutput("status", "ok")
     }).catch(err => {
