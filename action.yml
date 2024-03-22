@@ -11,6 +11,8 @@ inputs:
     description: 'Email subject'
   body:
     description: 'Email body'
+  type:
+    description: 'Email body MIME type'
   attachment:
     description: 'Email attachment'
 outputs:
