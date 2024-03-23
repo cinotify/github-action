@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: cinotify/github-action@ci
         with:
-          to: "jesse@jesse.sh"
+          to: ""
           subject: "${{ github.event.pull_request.head.sha || github.sha }}"
           body: "<a href='https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'>view build</a>"
           type: "text/html"
