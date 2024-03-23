@@ -29,9 +29,6 @@ export const notify = async () => {
       method: "POST",
     });
 
-    console.log("response status", response.status);
-    console.log("response.json", await response.json());
-
     if (response.status >= 300) {
       throw new Error(JSON.stringify(await response.json()));
     }
