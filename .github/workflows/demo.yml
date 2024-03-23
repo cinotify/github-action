@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     name: demo
     steps:
-      - run: env
       - uses: cinotify/github-action@ci
         with:
           to: "jesse@jesse.sh"
           subject: "${{ github.event.pull_request.head.sha || github.sha }}"
-          body: "<a href='https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'>view build</a> - ${{github.event.head_commit.message}}"
+          body: "<a href='https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'>view build</a>"
           type: "text/html"
