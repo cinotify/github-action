@@ -1,0 +1,17 @@
+name: demo
+on:
+  push: { branches: main }
+  pull_request: { branches: main }
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    name: demo
+    steps:
+      - uses: cinotify/github-action@main
+        with:
+          to: "jesse@jesse.sh"
+          subject: "${{ github.event.ref }}"
+          body: "<a href='https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'>view build</a>"
+          type: "text/html"
