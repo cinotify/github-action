@@ -14,4 +14,3 @@ jobs:
           to: "jesse@jesse.sh"
           subject: "${{ github.event.pull_request.head.sha || github.sha }}"
           body: "<a href='https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'>view build</a>"
-          type: "text/html"
